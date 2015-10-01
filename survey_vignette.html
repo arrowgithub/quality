@@ -204,10 +204,10 @@ WH.sizer.detectSize(img);
 
 <script type="text/javascript">
   function showVignette(event) {
+    event.preventDefault();
     var vignetteIns = document.getElementById("vignette");
     vignetteIns.style.display = "block";
     window.location.hash = "#displayVignette";
-    event.preventDefault();
 
     var testElement = document.getElementById("testing");
     testElement.style.display = "block";
