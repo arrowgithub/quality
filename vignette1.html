@@ -1,11 +1,11 @@
 <html>
    <head>
       <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-      <style>* {margin: 0;padding: 0;}body {background: rgba(0, 0, 0, .85);height: 100%;}#ad_iframe {box-shadow: 0px 0px 5px 0 rgba(0,0,0,0.2);display: block;left: auto;margin: 0 auto;position: relative;top: auto;}html {height: 100%;}.toprow {display: table;height: auto;margin-top: 12%;width: 100%;}.skip {background: transparent;border: 1px solid #dfdfdf;display: table;float: right;font-family: 'Roboto', arial, sans-serif;height: auto;min-width: 120px;padding: 10px 10px;transition: opacity 1s, background .75s;-webkit-transition: opacity 1s, background .75s;-moz-transition: opacity 1s, background .75s;-o-transition: opacity 1s, background .75s;}.skip span {color: white;display: table-cell;font-size: 20px;text-align: center;vertical-align: middle;}.skip span img {height: 17px;padding-left: 10px;vertical-align: middle;width: 17px;}.creative {margin-top: 12%;transition: opacity 1s;-webkit-transition: opacity 1s;position: relative;}.creative .click_blocker_glasspane {width: 100%;height: 100%;}@media (max-height: 480px) {.bottomrow {margin-top: 8%;}.creative {margin-top: 8%;}}@media (orientation: landscape) {.creative {margin-top: 5px !important;}#ad_iframe {margin: 0 0 0 70px;}.toprow {position: absolute;right: 0;bottom: 20px;}.skip {margin-bottom: 30px;}}</style>
+      <style>* {margin: 0;padding: 0;}body {background: rgba(0, 0, 0, .85);height: 100%;}#ad_iframe {box-shadow: 0px 0px 5px 0 rgba(0,0,0,0.2);display: block;left: auto;margin: 0 auto;position: relative;top: auto;}html {height: 100%;}.toprow {display: table;height: auto;margin-top: 12%;width: 100%;}.skip {background: transparent;border: 1px solid #dfdfdf;display: table;float: right;font-family: 'Roboto', arial, sans-serif;height: auto;min-width: 120px;padding: 10px 10px;transition: opacity 1s, background .75s;-webkit-transition: opacity 1s, background .75s;-moz-transition: opacity 1s, background .75s;-o-transition: opacity 1s, background .75s;}.skip span {color: white;display: table-cell;font-size: 20px;text-align: center;vertical-align: middle;}.skip span img {height: 17px;padding-left: 10px;vertical-align: middle;width: 17px;}.creative {margin-top: 12%;transition: opacity 1s;-webkit-transition: opacity 1s;position: relative; text-align:center}.creative .click_blocker_glasspane {width: 100%;height: 100%;}@media (max-height: 480px) {.bottomrow {margin-top: 8%;}.creative {margin-top: 8%;}}@media (orientation: landscape) {.creative {margin-top: 5px !important;}#ad_iframe {margin: 0 0 0 70px;}.toprow {position: absolute;right: 0;bottom: 20px;}.skip {margin-bottom: 30px;}}</style>
       </head>
    <body>
       <div class="toprow">
-         <div class="skip" id="dismiss-button"><span>Close ad<img src="https://tpc.googlesyndication.com/pagead/images/x_icon_32x32.png"></span></div>
+         <div onclick="dismiss()" class="skip" id="dismiss-button"><span>Close ad<img src="https://tpc.googlesyndication.com/pagead/images/x_icon_32x32.png"></span></div>
       </div>
       <div class="creative" id="creative">
          <img style="width:300px; height:250px" src="http://arrowgithub.github.io/quality/creative1.png">
@@ -20,6 +20,11 @@
         }, 750);
       };
     document.body.addEventListener('touchend', onTouchEnd, true);
+        function dismiss() {
+          console.log(window.top.location);
+          window.top.location.href="http://arrowgithub.github.io/quality/survey_page2.html"
+          window.top.location.reload(true);
+        }
      </script>
     </body>
 </html>
