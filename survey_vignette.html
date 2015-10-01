@@ -201,13 +201,23 @@ WH.sizer.detectSize(img);
 </div>
 
 <script>
-  function showVignette(event){
-    console.log('showing vignette');
+  function showVignette(event) {
     var vignetteIns = document.getElementById("vignette");
     vignetteIns.style.display = "block";
     window.location.hash = "#displayVignette";
     event.preventDefault();
+
+    // Hash change handler detects if the user presses back while the vignette is visible and if so
+    // hides the vignette.
+    window.addEventListener("hashchange", hashChangeHandler, false);
   }
+
+  function hashChangeHandler() {
+    var vignetteIns = document.getElementById("vignette");
+    vignetteIns.style.display = "none";
+    window.removeEventListener("hashchange", hashChangeHandler);
+  }
+
 </script>
 
           </div>
