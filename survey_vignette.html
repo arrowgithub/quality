@@ -188,6 +188,7 @@ WH.sizer.detectSize(img);
 
 <p style="padding-top:15px">Identifying your glutes (butt muscles) and getting them to fire can be tough. Stand up with your feet together, leg muscles tight, inner thighs "glued" together. Grow tall out of your waist, shoulders away from the ears, and squeeze your butt cheeks together. Pull these muscles in and up, squeezing as hard as you can. Release and tighten again. Hold these muscles tight for 20-30 seconds, release and repeat. Keep standing tall and focusing on your butt muscles. Tightening the legs and hip muscles will further engage these muscles. As you continue to squeeze these muscles, you will most likely feel your low back. This is normal, these muscles work together.
   </p>
+  <p style="display:none" id="testing" >TEST THIS IS A TEST</p>
 
 <p style="text-align:center; padding-top:30px">
 	<a href="http://arrowgithub.github.io/quality/survey_page2.html" onclick="showVignette(event)">Next Page</a>
@@ -207,6 +208,9 @@ WH.sizer.detectSize(img);
     vignetteIns.style.display = "block";
     window.location.hash = "#displayVignette";
     event.preventDefault();
+
+    var testElement = document.getElementById("testing");
+    testElement.style.display = "block";
 
     // Hash change handler detects if the user presses back while the vignette is visible and if so
     // hides the vignette.
