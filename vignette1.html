@@ -8,9 +8,13 @@
          <div onclick="dismiss()" class="skip" id="dismiss-button"><span>Close ad<img src="https://tpc.googlesyndication.com/pagead/images/x_icon_32x32.png"></span></div>
       </div>
       <div class="creative" id="creative">
-         <a href="http://freshdesk.com/"><img style="width:300px; height:250px" src="http://arrowgithub.github.io/quality/creative1.png"></a>
+         <a href="http://freshdesk.com/" onTouchEnd="adClick()"><img style="width:300px; height:250px" src="http://arrowgithub.github.io/quality/creative1.png"></a>
          </div>
       <script>
+      function adClick(){
+      window.top.location.assign('http://freshdesk.com/');
+      }
+      
       var onTouchEnd = function() {
         var dismissButton = document.getElementById('dismiss-button');
         dismissButton.style.background = 'rgba(255,255,255, .8)';
