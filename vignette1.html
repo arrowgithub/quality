@@ -8,8 +8,27 @@
          <div onclick="dismiss()" class="skip" id="dismiss-button"><span>Close ad<img src="https://tpc.googlesyndication.com/pagead/images/x_icon_32x32.png"></span></div>
       </div>
       <div class="creative" id="creative">
-         <a href="http://freshdesk.com/" onTouchEnd="adClick()"><img style="width:300px; height:250px" src="http://arrowgithub.github.io/quality/creative1.png"></a>
+         <a href="http://freshdesk.com/" onTouchEnd="adClick()"><img id = 'creativeImage' style="width:300px; height:250px" src="#"></a>
          </div>
+
+         <script>
+          var images = ['aaa.jpeg', 'toyota.jpeg', 'wayfair.jpeg'];
+          function getParameterByName(name) {
+              var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+              results = regex.exec(window.top.location.search);
+              return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+          }
+
+          var imageLink = '';
+          var imageIndex = getParameterByName('cid');
+          imageLink = images[imageIndex];
+          if (!imageLink) {
+            console.log('No creative index specified!')
+          }
+          var creative = document.getElementById('creativeImage');
+          creative.src = 'http://arrowgithub.github.io/quality/' + imageLink; 
+</script>
+
       <script>
       function adClick(){
       window.top.location.assign('http://freshdesk.com/');
@@ -28,7 +47,7 @@
       };
     document.body.addEventListener('touchend', onTouchEnd, true);
         function dismiss() {
-          window.top.location.assign("http://arrowgithub.github.io/quality/survey_page2.html");
+          window.top.location.assign("http://arrowgithub.github.io/quality/s2_2.html");
         }
      </script>
     </body>

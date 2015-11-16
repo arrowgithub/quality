@@ -47,7 +47,6 @@ enough reliability. When that is fixed we should use this method.
 					<p>The variety of plant and animal life in these specific environments is called biodiversity.
 						The tribes who lived in what is now known as Seattle fished salmon, while the tribes who lived
 						in what is now known as Maine caught crabs and lobsters. </p>
-						<p style="text-align:center"><img id="creative">
 						</p>
 						<p>Now think for a moment about what this means. Let’s say one year, a pod of whales was
 unable to go to their usual feeding area in Alaska because a school of sharks was inhabiting
@@ -55,29 +54,12 @@ those waters during the whales’ feeding time. So, looking for other sources of
 swam down towards Seattle and noticed a large population of salmon. They ate all the salmon
 and swam away to their next destination. The next week, the human tribes living in Seattle go to where the salmon usually are in order to get the first big catch of the season, and they find that no salmon are there. Instead of catching salmon, a staple of their diet, the humans must find another food source.</p>
 					<p style="text-align:center; padding-top:30px">
-			<a href="http://arrowgithub.github.io/quality/s2_2.html">Next Page</a>
+			<a href="http://arrowgithub.github.io/quality/s2_2.html" onclick="showVignette(event)">Next Page</a>
 		</p>
 				</div>
 			</div>
 
 </div> <!-- End content div -->
-
-<script>
-var images = ['aaa.jpeg', 'toyota.jpeg', 'wayfair.jpeg'];
-function getParameterByName(name) {
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-    results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-var imageLink = '';
-var imageIndex = getParameterByName('cid');
-imageLink = images[imageIndex];
-if (!imageLink) {
-	console.log('No creative index specified!')
-}
-var creative = document.getElementById('creative');
-creative.src = 'http://arrowgithub.github.io/quality/' + imageLink; 
-</script>
 
 <script type="text/javascript">
   function showVignette(event) {
@@ -106,6 +88,27 @@ creative.src = 'http://arrowgithub.github.io/quality/' + imageLink;
 	        </div>
 	       </div> <!-- End mw-mf-page-center div -->
 	      </div> <!-- End mw-mf-viewport div -->
+
+	      	<ins id="vignette" style="position: fixed !important;width: 100%; height: 100%; opacity: 1; left: 0px; top: 0px; z-index: 2147483647; display: none; background-color: white;">
+		 <iframe id="vignetteIframe" style="border:0px" width="100%" height="100%" src='#'></iframe>
+		</ins>
+
+		<script>
+var images = ['aaa.jpeg', 'toyota.jpeg', 'wayfair.jpeg'];
+function getParameterByName(name) {
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+    results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+var imageLink = '';
+var imageIndex = getParameterByName('cid');
+imageLink = images[imageIndex];
+if (!imageLink) {
+	console.log('No creative index specified!')
+}
+var vignetteIframe = document.getElementById('vignetteIframe');
+vignetteIframe.src = 'http://arrowgithub.github.io/quality/vignette1.html?cid=' + imageIndex; 
+</script>
 
 	</body>
 </html>
