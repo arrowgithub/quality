@@ -91,10 +91,11 @@ function sendUserData() {
 		}
 		var turkID = getParameterByName('turkID');
 		var data = new FormData();
-		data.append('mturkid', turkID);
-		data.append('timestamp', Date.now);
-		data.append('newUser', 't');
-		xmlHttp.open('GET', 'https://aqueous-journey-5619.herokuapp.com/git_dbChanges.php', true);
+		var url = 'https://aqueous-journey-5619.herokuapp.com/git_dbChanges.php?';
+		url = url + 'mturkid=' + turkID;
+		url = url + '&timestamp=' + Date.now;
+		url = url + '&newUser=t';
+		xmlHttp.open('GET', url, true);
 		xmlHttp.send(data);
 	}
 	sendUserData();
