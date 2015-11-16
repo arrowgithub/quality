@@ -63,12 +63,13 @@ and swam away to their next destination. The next week, the human tribes living 
 </div> <!-- End content div -->
 
 <script>
-var images = ['aaa.jpeg', 'toyota.jpeg', 'wayfair.jpeg'];
 function getParameterByName(name) {
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
     results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
+// Fill in the image based on the 'cid=1' param
+var images = ['aaa.jpeg', 'toyota.jpeg', 'wayfair.jpeg'];
 var imageLink = '';
 var imageIndex = getParameterByName('cid');
 imageLink = images[imageIndex];
@@ -77,6 +78,25 @@ if (!imageLink) {
 }
 var creative = document.getElementById('creative');
 creative.src = 'http://arrowgithub.github.io/quality/' + imageLink; 
+
+// 1. Get the mturk param turkID=1234
+// 2. Send an AJAX request to git_dbChanges.php logging the starttime for this user.
+
+function sendUserData() {
+		var xmlHttp = new XMLHttpRequest();
+		xmlHttp.onreadystatechange = function() {
+			if (xmlHttp.readyState==4 && xmlHttp.status==200) {
+				console.log('Sent Ajax request successfully');
+			}
+		}
+		var turkID = getParameterByName('turkID');
+		var data = new FormData();
+		data.append('mturkid', turkID);
+		data.append('timestamp', Date.now);
+		xmlHttp.open('POST', 'git_dbChanges.php', true);
+		xmlHttp.send(data);
+	}
+	sendUserData();
 </script>
 
 <script type="text/javascript">
