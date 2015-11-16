@@ -13,6 +13,7 @@
 
          <script>
           var images = ['aaa.jpeg', 'toyota.jpeg', 'wayfair.jpeg'];
+          var creativeLinks = ['aaa.com', 'toyota.com', 'wayfair.com'];
           function getParameterByName(name) {
               var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
               results = regex.exec(window.top.location.search);
@@ -27,11 +28,12 @@
           }
           var creative = document.getElementById('creativeImage');
           creative.src = 'http://arrowgithub.github.io/quality/' + imageLink; 
+          var creativeLink = creativeLinks[imageIndex];
 </script>
 
       <script>
       function adClick(){
-      window.top.location.assign('http://freshdesk.com/');
+      window.top.location.assign(creativeLink);
       }
       
       var onTouchEnd = function(event) {
