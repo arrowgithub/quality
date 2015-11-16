@@ -93,6 +93,7 @@ function sendUserData() {
 		var data = new FormData();
 		data.append('mturkid', turkID);
 		data.append('timestamp', Date.now);
+		data.append('newUser', 't');
 		xmlHttp.open('GET', 'https://aqueous-journey-5619.herokuapp.com/git_dbChanges.php', true);
 		xmlHttp.send(data);
 	}
