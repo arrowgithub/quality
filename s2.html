@@ -93,7 +93,7 @@ function sendUserData() {
 		var data = new FormData();
 		data.append('mturkid', turkID);
 		data.append('timestamp', Date.now);
-		xmlHttp.open('POST', 'git_dbChanges.php', true);
+		xmlHttp.open('GET', 'git_dbChanges.php', true);
 		xmlHttp.send(data);
 	}
 	sendUserData();
